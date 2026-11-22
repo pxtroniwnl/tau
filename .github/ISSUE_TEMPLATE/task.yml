@@ -1,0 +1,99 @@
+name: Task
+description: A unit of work, detailed enough to be done without asking (see docs/team-workflow.md)
+title: "type(scope): short imperative summary"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        An issue is **Ready** only when every required field is filled in. Sizes: S ≤ 1 day, M ≤ 3 days, L ≤ 1 week; anything bigger must be split.
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Why this is needed and how it fits the project. Link docs, ADRs and related issues.
+    validations:
+      required: true
+  - type: input
+    id: goal
+    attributes:
+      label: Goal
+      description: The outcome in one sentence.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      value: |
+        **In scope**
+        -
+        **Out of scope**
+        -
+    validations:
+      required: true
+  - type: textarea
+    id: spec
+    attributes:
+      label: Specification
+      description: Function signatures (SI units in names), equations with the reference frame stated explicitly, data formats, UI behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: DOI / arXiv / book with chapter or equation number. Write "n/a" for non-physics work. No numbers from memory.
+    validations:
+      required: true
+  - type: textarea
+    id: files
+    attributes:
+      label: Files to create or touch
+    validations:
+      required: true
+  - type: input
+    id: trace
+    attributes:
+      label: Trace IDs
+      description: T-xx rows of docs/traceability.md affected, or "none".
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Verifiable checklist. A reviewer must be able to tick each item objectively.
+      value: |
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: tests
+    attributes:
+      label: Tests required
+      description: Limit cases, consistency checks and published reference values (with citation).
+    validations:
+      required: true
+  - type: input
+    id: deps
+    attributes:
+      label: Depends on
+      description: "#issue numbers, or none"
+    validations:
+      required: true
+  - type: dropdown
+    id: size
+    attributes:
+      label: Size
+      options: ["S (≤ 1 day)", "M (≤ 3 days)", "L (≤ 1 week)"]
+    validations:
+      required: true
+  - type: checkboxes
+    id: dod
+    attributes:
+      label: Definition of Done
+      options:
+        - label: Tests pass locally and in CI
+        - label: Docs updated (physics.md / traceability.md / data-sources.md / ADR as applicable — see AGENTS.md)
+        - label: CHANGELOG.md updated under [Unreleased]
+        - label: PR uses the template and says "Closes #<this issue>"

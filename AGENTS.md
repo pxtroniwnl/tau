@@ -8,6 +8,7 @@ Tau (τ) is a 3D website where a user travels to a real, measured black hole and
 - [docs/physics.md](docs/physics.md): equations and assumptions
 - [docs/traceability.md](docs/traceability.md): on-screen element → equation → code → reference
 - [docs/adr/](docs/adr/): architecture decisions
+- [docs/team-workflow.md](docs/team-workflow.md): how work is split, tracked and reviewed
 
 ## Golden rules
 1. **Traceability (RULE #1).** Anything that represents physics (a number, color, brightness, position, motion or sound) must come from an equation or from data with a source. Tag the producing code with `@trace T-xx`, and give it a row in `docs/traceability.md`. If no equation produces an effect, it does not go in the scene. Decorative UI motion is allowed only if it cannot be mistaken for physics. When the physics or data fall short, say so on screen instead of inventing.
@@ -29,7 +30,7 @@ Tau (τ) is a 3D website where a user travels to a real, measured black hole and
 
 ## Conventions
 - **Language:** English everywhere: code, comments, docstrings, docs, commits, PRs, issues and UI text.
-- **Branches:** `type/short-kebab-description` off `main`, where type is one of `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `ci`, `perf`. Example: `feat/hyperbolic-travel`.
+- **Branches:** `type/<issue#>-short-kebab-description` off `main`, where type is one of `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `ci`, `perf`. Example: `feat/12-hyperbolic-travel`. Every branch starts from an issue.
 - **Commits:** [Conventional Commits](https://www.conventionalcommits.org/):
   - Format: `type(scope): imperative summary` (≤ 72 chars, no period).
   - Types: `feat`, `fix`, `docs`, `refactor`, `test`, `perf`, `chore`, `ci`, `build`.
@@ -37,7 +38,7 @@ Tau (τ) is a 3D website where a user travels to a real, measured black hole and
   - Keep commits small and atomic: one logical change, with tests passing at every commit.
   - Breaking changes use `!` (`feat(api)!: …`) and a `BREAKING CHANGE:` footer.
 - **Pull requests:**
-  - One concern per PR. The title follows Conventional Commits, because it becomes the squash commit.
+  - One concern per PR, linked to its issue with `Closes #N`. The title follows Conventional Commits, because it becomes the squash commit.
   - Fill in the template checklist. CI must be green before merging, and merges are squash only.
   - Never commit directly to `main`.
 - **Versioning:** SemVer tags `vX.Y.Z`. When releasing, move `[Unreleased]` entries into a `## [X.Y.Z] - YYYY-MM-DD` section. Paper releases get a Zenodo DOI.

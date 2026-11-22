@@ -1,7 +1,10 @@
+Closes #
+
 ## What changes
 <!-- Short summary -->
 
 ## Checklist
+- [ ] Every acceptance criterion of the issue is met
 - [ ] PR title follows Conventional Commits (`type(scope): summary`)
 - [ ] `CHANGELOG.md` updated under `[Unreleased]` (or the `no-changelog` label is justified)
 - [ ] Physics: which equation or data produces it? Reference:
