@@ -11,6 +11,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 - Architecture docs and ADR-0001 (layers) and ADR-0002 (Python as source of truth, precomputation).
 - CI jobs: backend, frontend, contract, trace and changelog. GitHub issue/PR templates and Dependabot.
 - `AGENTS.md` with the documentation duty and repo conventions.
+- Team workflow: Task issue template, `docs/team-workflow.md` (Definition of Ready, lifecycle, cadence), CODEOWNERS.
 
 ### Changed
 - All documentation, templates and UI text are now in English.
