@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "Si usas Tau, por favor cítalo así."
-title: "Tau (τ): simulador trazable de viaje a agujeros negros"
+message: "If you use Tau, please cite it as below."
+title: "Tau (τ): a traceable black hole travel simulator"
 type: software
 authors:
   - name: "Tau contributors"

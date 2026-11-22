@@ -1,10 +1,10 @@
-# Fuentes de datos
+# Data sources
 
-| Dataset | Uso | Fuente | Licencia |
+| Dataset | Use | Source | License |
 |---|---|---|---|
-| `data/black_holes.json` | Catálogo de agujeros negros (T-01, T-02) | Fuente primaria (DOI/arXiv) por cada valor; se completa en F3 | CC BY 4.0 |
-| Estrellas de fondo | Cielo real (T-08) | Hipparcos (ESA 1997) vía HYG v4 | CC BY-SA 4.0 (los derivados heredan la licencia) |
+| `data/black_holes.json` | Black hole catalog (T-01, T-02) | Primary source (DOI/arXiv) for every value; filled in Phase 3 | CC BY 4.0 |
+| Background stars | Real sky (T-08) | Hipparcos (ESA 1997) via HYG v4 | CC BY-SA 4.0 (derivatives inherit the license) |
 
-Reglas:
-- `data/raw/` está gitignored. Se descarga con un script que verifica el checksum y **nunca se modifica**.
-- No se usan números de memoria: cada valor lleva su referencia. Lo desconocido va como `null` y la app lo muestra como desconocido.
+Rules:
+- `data/raw/` is gitignored. It is downloaded by a script that verifies a checksum and is **never modified**.
+- No numbers from memory: every value carries its reference. Unknown values are `null`, and the app shows them as unknown.
