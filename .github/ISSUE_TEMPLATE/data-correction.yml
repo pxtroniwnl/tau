@@ -1,0 +1,23 @@
+name: Corrección de datos
+description: Un valor del catálogo está mal o desactualizado
+labels: [data]
+body:
+  - type: input
+    id: object
+    attributes:
+      label: Objeto y campo (p. ej. "Cygnus X-1 · mass_msun")
+    validations:
+      required: true
+  - type: input
+    id: value
+    attributes:
+      label: Valor correcto con su error
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Fuente primaria (DOI o arXiv)
+      description: Obligatoria. Sin fuente no se cambia nada.
+    validations:
+      required: true

@@ -1,0 +1,62 @@
+[project]
+name = "tau"
+version = "0.1.0"
+description = "Tau (τ): physics engine, data pipeline and API for the black hole travel simulator"
+license = "MIT"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "numpy>=2.0",
+    "pydantic>=2.8",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.27",
+    "import-linter>=2.1",
+    "mypy>=1.11",
+    "pytest>=8.3",
+    "ruff>=0.6",
+    "uvicorn>=0.30",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tau"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+strict = true
+files = ["src", "tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+# Layers: dependencies only point inward (see docs/adr/0001-layered-architecture.md).
+[tool.importlinter]
+root_package = "tau"
+include_external_packages = true
+
+[[tool.importlinter.contracts]]
+name = "Layered architecture"
+type = "layers"
+layers = [
+    "tau.api | tau.pipeline | tau.tools",
+    "tau.catalog",
+    "tau.physics",
+]
+
+[[tool.importlinter.contracts]]
+name = "Physics stays pure (no web or I/O frameworks)"
+type = "forbidden"
+source_modules = ["tau.physics"]
+forbidden_modules = ["fastapi", "pydantic"]

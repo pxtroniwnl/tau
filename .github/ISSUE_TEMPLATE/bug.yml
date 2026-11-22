@@ -1,0 +1,16 @@
+name: Bug
+description: Algo no funciona como debería
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: Qué pasó y qué esperabas
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Pasos para reproducirlo
+    validations:
+      required: true

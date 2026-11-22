@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Si usas Tau, por favor cítalo así."
+title: "Tau (τ): simulador trazable de viaje a agujeros negros"
+type: software
+authors:
+  - name: "Tau contributors"
+license: MIT
+version: 0.1.0
+repository-code: "https://github.com/pxtroniwnl/tau"

@@ -1,0 +1,33 @@
+/* Design tokens. UI chrome only: these colors must never tint the 3D scene,
+   whose colors come from physics (see docs/traceability.md). */
+:root {
+  --void: #07080a;
+  --ink: #edeae4; /* logo stroke; Earth clock */
+  --ink-muted: #9b978f;
+  --ink-faint: rgb(237 234 228 / 0.3);
+  --accent: #ff9a4d; /* logo dot; traveler clock (τ = you) */
+  --alert: #ff4d5e;
+
+  --glass-bg: rgb(237 234 228 / 0.06);
+  --glass-border: rgb(237 234 228 / 0.12);
+  --glass-blur: 16px;
+  --radius: 14px;
+
+  --dur-fast: 150ms;
+  --dur-base: 300ms;
+  --dur-slow: 800ms;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root[data-state="alert"] {
+  --accent: var(--alert);
+  --glass-border: rgb(255 77 94 / 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+  }
+}
