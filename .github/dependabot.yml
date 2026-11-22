@@ -4,6 +4,10 @@ updates:
     directory: /frontend
     schedule: { interval: weekly }
     groups: { frontend: { patterns: ["*"] } }
+    ignore:
+      # typescript-eslint supports TS < 6.1; unpin when it adds support.
+      - dependency-name: typescript
+        versions: [">=6.1.0"]
   - package-ecosystem: uv
     directory: /backend
     schedule: { interval: weekly }
