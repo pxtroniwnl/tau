@@ -1,0 +1,15 @@
+name: Física
+description: Una ecuación, un supuesto o un efecto visual parece incorrecto
+labels: [physics]
+body:
+  - type: input
+    id: trace
+    attributes:
+      label: ID de trazabilidad afectado (T-xx)
+  - type: textarea
+    id: issue
+    attributes:
+      label: Qué está mal y por qué
+      description: Incluye la ecuación correcta y su referencia.
+    validations:
+      required: true
