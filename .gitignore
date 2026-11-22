@@ -1,0 +1,23 @@
+# Raw downloads: never committed, never modified (see docs/data-sources.md)
+data/raw/
+
+# Python
+__pycache__/
+.venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# Node / Next
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+.vercel/
+
+# Local tooling
+.playwright-mcp/
+.env*
+!.env.example
+.DS_Store
