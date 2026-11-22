@@ -9,10 +9,11 @@ export default function Home() {
       <section className={glass.panel}>
         <h1 className={styles.title}>Tau</h1>
         <p className={styles.lead}>
-          Viaja a un agujero negro real y mide cuánto envejeces tú y cuánto la Tierra.
+          Travel to a real black hole and measure how much you age versus how much time passes on
+          Earth.
         </p>
         <p className={styles.note}>
-          En construcción · cada número saldrá de una ecuación con fuente.
+          Under construction · every number will come from an equation with a source.
         </p>
       </section>
     </main>
