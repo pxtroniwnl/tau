@@ -1,23 +1,23 @@
-name: Corrección de datos
-description: Un valor del catálogo está mal o desactualizado
+name: Data correction
+description: A catalog value is wrong or outdated
 labels: [data]
 body:
   - type: input
     id: object
     attributes:
-      label: Objeto y campo (p. ej. "Cygnus X-1 · mass_msun")
+      label: Object and field (e.g. "Cygnus X-1 · mass_msun")
     validations:
       required: true
   - type: input
     id: value
     attributes:
-      label: Valor correcto con su error
+      label: Correct value with its uncertainty
     validations:
       required: true
   - type: input
     id: source
     attributes:
-      label: Fuente primaria (DOI o arXiv)
-      description: Obligatoria. Sin fuente no se cambia nada.
+      label: Primary source (DOI or arXiv)
+      description: Required. Nothing changes without a source.
     validations:
       required: true

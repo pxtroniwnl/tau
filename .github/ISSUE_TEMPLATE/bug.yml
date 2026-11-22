@@ -1,16 +1,16 @@
 name: Bug
-description: Algo no funciona como debería
+description: Something does not work as expected
 labels: [bug]
 body:
   - type: textarea
     id: what
     attributes:
-      label: Qué pasó y qué esperabas
+      label: What happened and what you expected
     validations:
       required: true
   - type: textarea
     id: repro
     attributes:
-      label: Pasos para reproducirlo
+      label: Steps to reproduce
     validations:
       required: true

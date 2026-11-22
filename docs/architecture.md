@@ -1,25 +1,25 @@
-# Arquitectura
+# Architecture
 
-Monorepo con dos aplicaciones y un contrato entre ellas.
+A monorepo with two applications and a contract between them.
 
 ```
-data/black_holes.json (a mano, con fuentes)
+data/black_holes.json (hand-curated, with sources)
         │
-backend/ (Python = fuente de verdad de la física)
-  physics ← catalog ← pipeline ──► frontend/public/data/* (JSON, LUT, stars.bin; estáticos en la CDN)
-                    ← api (FastAPI) ──► frontend/src/api/openapi.json ──► tipos TS
-                      pipeline ──► data/golden/golden.json ──► tests del espejo TS
+backend/ (Python = source of truth for the physics)
+  physics ← catalog ← pipeline ──► frontend/public/data/* (JSON, LUTs, stars.bin; static on the CDN)
+                    ← api (FastAPI) ──► frontend/src/api/openapi.json ──► TS types
+                      pipeline ──► data/golden/golden.json ──► TS mirror tests
 frontend/ (Next.js + React Three Fiber)
-  physics (espejo) ← sim ← scene ← ui ← app
+  physics (mirror) ← sim ← scene ← ui ← app
 ```
 
-Las dependencias solo apuntan hacia adentro, y CI lo hace cumplir:
-- Backend: `import-linter` (contratos en `backend/pyproject.toml`).
-- Frontend: ESLint `no-restricted-imports` (en `frontend/eslint.config.mjs`).
+Dependencies only point inward, and CI enforces it:
+- Backend: `import-linter` (contracts in `backend/pyproject.toml`).
+- Frontend: ESLint `no-restricted-imports` (in `frontend/eslint.config.mjs`).
 
-Decisiones: [ADR-0001](adr/0001-layered-architecture.md) y [ADR-0002](adr/0002-python-source-of-truth-precompute.md).
+Decisions: [ADR-0001](adr/0001-layered-architecture.md) and [ADR-0002](adr/0002-python-source-of-truth-precompute.md). Any architecture change needs a new ADR and an update to this file (see [AGENTS.md](../AGENTS.md)).
 
-## Artefactos generados
-Todo lo que produce `backend` (`openapi.json`, `golden.json`, los datos de `frontend/public/data/` y `paper/`) **se versiona**. CI lo regenera y exige `git diff --exit-code`. Así:
-- Vercel no necesita Python para construir el frontend.
-- El paper es reproducible commit a commit.
+## Generated artifacts
+Everything `backend` produces (`openapi.json`, `golden.json`, the data in `frontend/public/data/` and `paper/`) **is committed**. CI regenerates it and requires `git diff --exit-code`. As a result:
+- Vercel does not need Python to build the frontend.
+- The paper is reproducible commit by commit.

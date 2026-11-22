@@ -1,16 +1,16 @@
-# ADR-0001: Arquitectura en capas con dependencias hacia adentro
+# ADR-0001: Layered architecture with inward-only dependencies
 
-- Estado: aceptada
-- Fecha: 2026-11-22
+- Status: accepted
+- Date: 2026-11-22
 
-## Contexto
-La regla de trazabilidad exige que cada número y cada efecto visual salgan de una ecuación con fuente. Si la física se mezcla con la UI o con el render, esa trazabilidad se pierde.
+## Context
+The traceability rule requires every number and every visual effect to come from an equation with a source. If physics gets mixed with UI or rendering code, that traceability is lost.
 
-## Decisión
-- **Backend:** `physics` (puro, numpy) ← `catalog` ← `pipeline` | `api` | `tools`. `physics` no importa frameworks web ni de I/O.
-- **Frontend:** `physics` (espejo TS puro) ← `sim` ← `scene` ← `ui` ← `app`. `physics` no importa React, Next ni three.
-- Se hace cumplir en CI con import-linter (Python) y ESLint `no-restricted-imports` (TS).
+## Decision
+- **Backend:** `physics` (pure, numpy) ← `catalog` ← `pipeline` | `api` | `tools`. `physics` must not import web or I/O frameworks.
+- **Frontend:** `physics` (pure TS mirror) ← `sim` ← `scene` ← `ui` ← `app`. `physics` must not import React, Next or three.
+- Enforced in CI with import-linter (Python) and ESLint `no-restricted-imports` (TS).
 
-## Consecuencias
-- La física se puede testear y citar de forma aislada.
-- Hay más archivos, pero cada uno tiene un solo motivo para cambiar.
+## Consequences
+- Physics can be tested and cited in isolation.
+- More files, but each one has a single reason to change.
