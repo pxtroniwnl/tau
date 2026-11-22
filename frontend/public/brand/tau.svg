@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" role="img" aria-label="Tau">
+<path d="M48 112 H104 C124 112 128 76 150 76 C172 76 176 112 196 112 H252" stroke="#EDEAE4" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<circle cx="150" cy="108" r="13" fill="#FF9A4D"/>
+<path d="M150 140 V214 C150 236 162 246 186 240" stroke="#EDEAE4" stroke-width="12" stroke-linecap="round" fill="none"/>
+</svg>
