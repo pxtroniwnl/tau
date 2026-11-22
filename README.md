@@ -2,20 +2,20 @@
 
 # Tau (τ)
 
-τ es el **tiempo propio**: el tiempo que vive el viajero. Tau es una web 3D en la que eliges un agujero negro real, viajas hasta él y ves cuánto envejeces tú y cuánto la Tierra. Todo lo que muestra sale de una ecuación o de un dato con fuente.
+τ is **proper time**: the time the traveler lives through. Tau is a 3D website where you pick a real black hole, travel to it, and see how much you age versus how much time passes on Earth. Everything it shows comes from an equation or from data with a source.
 
-Proyecto del semillero de astronomía y ciencia de datos. Es la base reproducible de un paper.
+A project of an astronomy and data science research group, and the reproducible basis for a paper.
 
-## Estructura
-| Carpeta | Qué hay |
+## Layout
+| Folder | Contents |
 |---|---|
-| `backend/` | Python (uv): motor físico (fuente de verdad), catálogo, pipeline de datos y API FastAPI |
-| `frontend/` | Next.js + React Three Fiber: la experiencia 3D |
-| `data/` | `black_holes.json` (con fuentes), valores dorados; `raw/` no se versiona |
+| `backend/` | Python (uv): physics engine (source of truth), catalog, data pipeline and FastAPI API |
+| `frontend/` | Next.js + React Three Fiber: the 3D experience |
+| `data/` | `black_holes.json` (with sources), golden values; `raw/` is not committed |
 | `docs/` | [physics.md](docs/physics.md), [traceability.md](docs/traceability.md), [architecture.md](docs/architecture.md), ADRs |
-| `paper/` | Figuras y tablas generadas |
+| `paper/` | Generated figures and tables |
 
-## Desarrollo
+## Development
 ```bash
 # backend
 cd backend && uv sync
@@ -27,9 +27,9 @@ cd frontend && npm ci
 npm run dev
 ```
 
-Checks completos (los mismos que corre CI): ver [CONTRIBUTING.md](CONTRIBUTING.md).
+Rules and conventions for contributors (humans and AI agents) are in [AGENTS.md](AGENTS.md). Changes are recorded in [CHANGELOG.md](CHANGELOG.md).
 
-## Licencia
-- Código: MIT ([LICENSE](LICENSE)).
-- Documentación y catálogo: CC BY 4.0.
-- Datos estelares derivados de HYG: CC BY-SA 4.0.
+## License
+- Code: MIT ([LICENSE](LICENSE)).
+- Documentation and catalog: CC BY 4.0.
+- Star data derived from HYG: CC BY-SA 4.0.

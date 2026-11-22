@@ -1,15 +1,15 @@
-name: Física
-description: Una ecuación, un supuesto o un efecto visual parece incorrecto
+name: Physics
+description: An equation, assumption or visual effect looks wrong
 labels: [physics]
 body:
   - type: input
     id: trace
     attributes:
-      label: ID de trazabilidad afectado (T-xx)
+      label: Affected traceability ID (T-xx)
   - type: textarea
     id: issue
     attributes:
-      label: Qué está mal y por qué
-      description: Incluye la ecuación correcta y su referencia.
+      label: What is wrong and why
+      description: Include the correct equation and its reference.
     validations:
       required: true

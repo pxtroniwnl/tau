@@ -1,9 +1,12 @@
-## Qué cambia
-<!-- Resumen breve -->
+## What changes
+<!-- Short summary -->
 
 ## Checklist
-- [ ] Si toca física: ¿qué ecuación o dato lo produce? Referencia:
-- [ ] `docs/traceability.md` actualizado (y `@trace` en el código)
-- [ ] `docs/physics.md` actualizado si cambia una ecuación o un supuesto
-- [ ] Tests nuevos o actualizados (límites y valores publicados)
-- [ ] Artefactos generados regenerados (`openapi.json`, `golden.json`, …)
+- [ ] PR title follows Conventional Commits (`type(scope): summary`)
+- [ ] `CHANGELOG.md` updated under `[Unreleased]` (or the `no-changelog` label is justified)
+- [ ] Physics: which equation or data produces it? Reference:
+- [ ] `docs/traceability.md` updated (and `@trace` tags in the code)
+- [ ] `docs/physics.md` updated if an equation or assumption changed
+- [ ] Architecture changed? New ADR in `docs/adr/` + `docs/architecture.md` updated
+- [ ] Tests added or updated (limits and published values)
+- [ ] Generated artifacts regenerated (`openapi.json`, `golden.json`, …)
